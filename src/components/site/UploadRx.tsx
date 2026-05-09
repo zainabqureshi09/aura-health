@@ -52,7 +52,7 @@ export function UploadRx() {
               handleFile(e.dataTransfer.files?.[0] ?? null);
             }}
             onClick={() => inputRef.current?.click()}
-            className="relative border-2 border-dashed border-white/20 rounded-2xl p-12 text-center cursor-pointer hover:border-primary/60 transition-colors group"
+            className="relative border-2 border-dashed border-foreground/20 rounded-2xl p-12 text-center cursor-pointer hover:border-primary/60 transition-colors group"
           >
             <input
               ref={inputRef}
@@ -93,12 +93,12 @@ export function UploadRx() {
                       setFile(null);
                       setProgress(0);
                     }}
-                    className="p-2 rounded-lg hover:bg-white/10"
+                    className="p-2 rounded-lg hover:bg-foreground/10"
                   >
                     <X className="w-4 h-4" />
                   </button>
                 </div>
-                <div className="mt-5 h-2 rounded-full bg-white/10 overflow-hidden">
+                <div className="mt-5 h-2 rounded-full bg-foreground/10 overflow-hidden">
                   <motion.div
                     animate={{ width: `${progress}%` }}
                     className="h-full bg-gradient-primary"
