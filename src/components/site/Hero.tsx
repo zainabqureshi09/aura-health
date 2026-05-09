@@ -75,7 +75,7 @@ export function Hero() {
             </a>
             <a
               href="#upload"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full glass-strong font-medium hover:bg-white/10 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full glass-strong font-medium hover:bg-foreground/10 transition-colors"
             >
               <Upload className="w-4 h-4" />
               Upload Prescription

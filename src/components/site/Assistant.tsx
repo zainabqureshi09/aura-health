@@ -57,7 +57,7 @@ export function Assistant() {
           transition={{ duration: 0.7 }}
           className="relative glass-strong rounded-3xl p-6 shadow-elegant"
         >
-          <div className="flex items-center justify-between pb-4 border-b border-white/10">
+          <div className="flex items-center justify-between pb-4 border-b border-foreground/10">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 grid place-items-center rounded-lg bg-gradient-primary">
                 <Bot className="w-4 h-4 text-primary-foreground" />
@@ -93,7 +93,7 @@ export function Assistant() {
                   {m.text}
                 </div>
                 {m.who === "user" && (
-                  <div className="w-7 h-7 shrink-0 grid place-items-center rounded-lg bg-white/10">
+                  <div className="w-7 h-7 shrink-0 grid place-items-center rounded-lg bg-foreground/10">
                     <User className="w-3.5 h-3.5" />
                   </div>
                 )}

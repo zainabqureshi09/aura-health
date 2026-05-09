@@ -54,11 +54,11 @@ export function Contact() {
         >
           <h3 className="text-2xl font-bold">Request a delivery</h3>
           <div className="grid sm:grid-cols-2 gap-4">
-            <input className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-primary transition" placeholder="Full name" />
-            <input className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-primary transition" placeholder="Phone number" />
+            <input className="bg-foreground/5 border border-foreground/10 rounded-xl px-4 py-3 outline-none focus:border-primary transition" placeholder="Full name" />
+            <input className="bg-foreground/5 border border-foreground/10 rounded-xl px-4 py-3 outline-none focus:border-primary transition" placeholder="Phone number" />
           </div>
-          <input className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-primary transition" placeholder="Delivery address" />
-          <textarea rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-primary transition resize-none" placeholder="Which medicines do you need?" />
+          <input className="w-full bg-foreground/5 border border-foreground/10 rounded-xl px-4 py-3 outline-none focus:border-primary transition" placeholder="Delivery address" />
+          <textarea rows={4} className="w-full bg-foreground/5 border border-foreground/10 rounded-xl px-4 py-3 outline-none focus:border-primary transition resize-none" placeholder="Which medicines do you need?" />
           <button className="w-full py-3.5 rounded-xl bg-gradient-primary text-primary-foreground font-medium glow-primary hover:scale-[1.01] transition">
             Send request
           </button>

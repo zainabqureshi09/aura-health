@@ -2,7 +2,7 @@ import logo from "@/assets/logo.png";
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/10 mt-10">
+    <footer className="relative border-t border-foreground/10 mt-10">
       <div className="mx-auto max-w-7xl px-4 py-14 grid md:grid-cols-4 gap-10">
         <div className="md:col-span-2">
           <div className="flex items-center gap-3">
@@ -34,7 +34,7 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-white/10 py-6 text-center text-xs text-muted-foreground">
+      <div className="border-t border-foreground/10 py-6 text-center text-xs text-muted-foreground">
         © {new Date().getFullYear()} Hassan Medical Store. All rights reserved.
       </div>
     </footer>

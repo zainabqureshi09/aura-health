@@ -84,7 +84,7 @@ export function Navbar() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="px-3 py-2 rounded-lg hover:bg-white/5"
+                className="px-3 py-2 rounded-lg hover:bg-foreground/5"
               >
                 {l.label}
               </a>
