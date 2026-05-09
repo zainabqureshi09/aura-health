@@ -16,13 +16,13 @@ import { ScrollProgress } from "@/components/site/ScrollProgress";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "MediSphere — Pakistan's Premium Digital Pharmacy" },
+      { title: "Hassan Medical Store — Pakistan's Premium Digital Pharmacy" },
       {
         name: "description",
         content:
           "Order genuine medicines, upload prescriptions, and get same-day delivery across Pakistan. AI-assisted healthcare, 24/7.",
       },
-      { property: "og:title", content: "MediSphere — Premium Digital Pharmacy" },
+      { property: "og:title", content: "Hassan Medical Store — Premium Digital Pharmacy" },
       {
         property: "og:description",
         content:

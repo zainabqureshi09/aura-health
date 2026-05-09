@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Pill, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const links = [
   { href: "#features", label: "Features" },
@@ -35,11 +36,9 @@ export function Navbar() {
           }`}
         >
           <a href="#" className="flex items-center gap-2 group">
-            <span className="relative grid place-items-center w-9 h-9 rounded-xl bg-gradient-primary glow-primary">
-              <Pill className="w-5 h-5 text-primary-foreground" />
-            </span>
-            <span className="font-display font-bold text-lg tracking-tight">
-              Medi<span className="text-gradient">Sphere</span>
+            <img src={logo} alt="Hassan Medical Store logo" className="h-10 w-auto object-contain" />
+            <span className="font-display font-bold text-lg tracking-tight hidden sm:inline">
+              Hassan <span className="text-gradient">Medical Store</span>
             </span>
           </a>
 
