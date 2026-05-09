@@ -1,16 +1,14 @@
-import { Pill } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 export function Footer() {
   return (
     <footer className="relative border-t border-white/10 mt-10">
       <div className="mx-auto max-w-7xl px-4 py-14 grid md:grid-cols-4 gap-10">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-2">
-            <span className="w-9 h-9 grid place-items-center rounded-xl bg-gradient-primary glow-primary">
-              <Pill className="w-5 h-5 text-primary-foreground" />
-            </span>
+          <div className="flex items-center gap-3">
+            <img src={logo} alt="Hassan Medical Store logo" className="h-12 w-auto object-contain" />
             <span className="font-display font-bold text-lg">
-              Medi<span className="text-gradient">Sphere</span>
+              Hassan <span className="text-gradient">Medical Store</span>
             </span>
           </div>
           <p className="mt-4 text-sm text-muted-foreground max-w-sm">
