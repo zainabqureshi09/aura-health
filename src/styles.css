@@ -103,18 +103,18 @@
 
 @layer utilities {
   .glass {
-    background: oklch(1 0 0 / 0.04);
+    background: oklch(1 0 0 / 0.6);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid oklch(1 0 0 / 0.08);
+    border: 1px solid oklch(0.32 0.11 260 / 0.1);
   }
   .glass-strong {
-    background: oklch(1 0 0 / 0.08);
+    background: oklch(1 0 0 / 0.8);
     backdrop-filter: blur(24px) saturate(200%);
-    border: 1px solid oklch(1 0 0 / 0.12);
+    border: 1px solid oklch(0.32 0.11 260 / 0.14);
   }
   .text-gradient {
-    background: linear-gradient(135deg, oklch(0.95 0.05 200), oklch(0.78 0.18 210) 50%, oklch(0.65 0.2 250));
+    background: linear-gradient(135deg, oklch(0.32 0.11 260), oklch(0.58 0.16 145));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -126,8 +126,8 @@
 
   .grid-bg {
     background-image:
-      linear-gradient(oklch(0.78 0.18 210 / 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(0.78 0.18 210 / 0.06) 1px, transparent 1px);
+      linear-gradient(oklch(0.32 0.11 260 / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.32 0.11 260 / 0.06) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 
@@ -138,18 +138,6 @@
   .animate-float { animation: float-slow 8s ease-in-out infinite; }
 
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px oklch(0.78 0.18 210 / 0.4); }
-    50% { box-shadow: 0 0 60px oklch(0.78 0.18 210 / 0.7); }
+    0%, 100% { box-shadow: 0 0 20px oklch(0.58 0.16 145 / 0.4); }
+    50% { box-shadow: 0 0 60px oklch(0.58 0.16 145 / 0.7); }
   }
-  .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
-
-  @keyframes shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
-  }
-  .shimmer {
-    background: linear-gradient(90deg, transparent, oklch(0.78 0.18 210 / 0.2), transparent);
-    background-size: 200% 100%;
-    animation: shimmer 3s infinite;
-  }
-}
