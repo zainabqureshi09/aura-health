@@ -63,7 +63,7 @@ export function Assistant() {
                 <Bot className="w-4 h-4 text-primary-foreground" />
               </div>
               <div>
-                <p className="text-sm font-semibold">MediSphere AI</p>
+                <p className="text-sm font-semibold">Hassan Medical AI</p>
                 <p className="text-xs text-primary">● online</p>
               </div>
             </div>

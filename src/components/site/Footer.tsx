@@ -29,13 +29,13 @@ export function Footer() {
           <p className="font-semibold mb-3">Contact</p>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>+92 300 0000000</li>
-            <li>hello@medisphere.pk</li>
+            <li>hello@hassanmedical.pk</li>
             <li>Lahore · Karachi · Islamabad</li>
           </ul>
         </div>
       </div>
       <div className="border-t border-white/10 py-6 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} MediSphere Pharmacy. All rights reserved.
+        © {new Date().getFullYear()} Hassan Medical Store. All rights reserved.
       </div>
     </footer>
   );
