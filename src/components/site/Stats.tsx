@@ -43,12 +43,12 @@ export function Stats() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="glass rounded-2xl p-6 text-center"
+              className="glass-strong rounded-3xl p-8 text-center border border-brand-blue/5 shadow-card hover:shadow-elegant transition-all duration-500"
             >
-              <p className="text-3xl md:text-5xl font-bold text-gradient">
+              <p className="text-4xl md:text-6xl font-bold text-gradient leading-none">
                 <Counter value={s.value} suffix={s.suffix} />
               </p>
-              <p className="mt-2 text-sm text-muted-foreground">{s.label}</p>
+              <p className="mt-4 text-xs font-bold text-brand-text/50 uppercase tracking-[0.2em]">{s.label}</p>
             </motion.div>
           ))}
         </div>

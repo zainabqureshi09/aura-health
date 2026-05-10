@@ -10,12 +10,12 @@ export function FloatingWhatsApp() {
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1.5, type: "spring" }}
-      whileHover={{ scale: 1.1 }}
-      className="fixed bottom-6 right-6 z-40 w-14 h-14 grid place-items-center rounded-full text-white animate-pulse-glow"
-      style={{ background: "var(--whatsapp)" }}
+      whileHover={{ scale: 1.1, boxShadow: "0 0 25px rgba(37, 211, 102, 0.4)" }}
+      className="fixed bottom-8 right-8 z-40 w-16 h-16 grid place-items-center rounded-2xl text-white shadow-2xl animate-pulse-glow"
+      style={{ background: "#25D366" }}
       aria-label="Chat on WhatsApp"
     >
-      <MessageCircle className="w-6 h-6" />
+      <MessageCircle className="w-7 h-7" />
     </motion.a>
   );
 }

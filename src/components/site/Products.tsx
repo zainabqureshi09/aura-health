@@ -48,24 +48,24 @@ export function Products() {
           </a>
         </div>
 
-        <div className="mt-10 flex flex-wrap gap-2">
+        <div className="mt-12 flex flex-wrap gap-3">
           {categories.map((c) => (
             <button
               key={c.id}
               onClick={() => setActive(c.id)}
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm transition-all ${
+              className={`inline-flex items-center gap-2.5 px-6 py-3 rounded-2xl text-sm font-bold transition-all duration-300 ${
                 active === c.id
-                  ? "bg-gradient-primary text-primary-foreground glow-primary"
-                  : "glass hover:bg-foreground/10"
+                  ? "bg-gradient-primary text-white shadow-lg glow-green"
+                  : "glass hover:bg-brand-blue/5 text-brand-blue/60 hover:text-brand-blue border border-brand-blue/5"
               }`}
             >
-              <c.icon className="w-4 h-4" />
+              <c.icon className={`w-4 h-4 ${active === c.id ? "text-white" : "text-brand-green"}`} />
               {c.label}
             </button>
           ))}
         </div>
 
-        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {filtered.map((p, i) => (
             <motion.div
               key={p.name}
@@ -73,26 +73,33 @@ export function Products() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              whileHover={{ y: -6 }}
-              className="group relative rounded-2xl glass overflow-hidden"
+              whileHover={{ y: -8 }}
+              className="group relative rounded-3xl glass-strong border border-brand-blue/5 overflow-hidden shadow-card hover:shadow-elegant transition-all duration-500"
             >
-              <div className="aspect-square bg-gradient-to-br from-primary/30 via-accent/20 to-transparent grid place-items-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-glow opacity-0 group-hover:opacity-100 transition-opacity" />
-                <Pill className="w-20 h-20 text-primary group-hover:scale-110 transition-transform duration-500" />
+              <div className="aspect-square bg-gradient-to-br from-brand-blue/5 via-brand-green/5 to-transparent grid place-items-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-glow opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <Pill className="w-24 h-24 text-brand-blue/20 group-hover:text-brand-blue/40 group-hover:scale-110 group-hover:rotate-12 transition-all duration-700" />
+                <div className="absolute top-4 left-4">
+                  <span className="px-3 py-1 rounded-full bg-white/80 backdrop-blur-md border border-brand-blue/5 text-[10px] font-bold text-brand-blue uppercase tracking-widest shadow-sm">
+                    {p.tag}
+                  </span>
+                </div>
               </div>
-              <div className="p-4">
-                <p className="text-xs text-primary">{p.tag}</p>
-                <h3 className="mt-1 font-semibold">{p.name}</h3>
-                <div className="mt-3 flex items-center justify-between">
-                  <span className="font-bold">{p.price}</span>
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-brand-blue group-hover:text-brand-green transition-colors">{p.name}</h3>
+                <div className="mt-4 flex items-center justify-between">
+                  <div className="flex flex-col">
+                    <span className="text-xs text-brand-muted font-medium uppercase tracking-wider">Price</span>
+                    <span className="text-xl font-bold text-brand-blue">{p.price}</span>
+                  </div>
                   <a
                     href="https://wa.me/923000000000"
                     target="_blank"
                     rel="noreferrer"
-                    className="w-8 h-8 grid place-items-center rounded-full bg-gradient-primary glow-primary hover:scale-110 transition"
+                    className="w-12 h-12 grid place-items-center rounded-2xl bg-gradient-primary text-white shadow-lg hover:scale-110 hover:glow-green transition-all duration-300"
                     aria-label="Order"
                   >
-                    <ShoppingBag className="w-4 h-4 text-primary-foreground" />
+                    <ShoppingBag className="w-5 h-5" />
                   </a>
                 </div>
               </div>

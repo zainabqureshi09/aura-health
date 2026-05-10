@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import { LoadingScreen } from "@/components/LoadingScreen";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
 import { Features } from "@/components/site/Features";
@@ -36,6 +37,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="relative min-h-screen bg-background text-foreground">
+      <LoadingScreen />
       <SmoothScroll />
       <ScrollProgress />
       <Navbar />
