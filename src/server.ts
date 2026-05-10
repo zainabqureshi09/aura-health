@@ -19,7 +19,7 @@ async function getServerEntry(): Promise<ServerEntry> {
 }
 
 function brandedErrorResponse(error?: unknown): Response {
-  const message = error instanceof Error ? error.message : "Something went wrong on our end. You can try refreshing or head back home.";
+  const message = error instanceof Error ? error.message : (error ? String(error) : "An unexpected server error occurred without a specific message.");
   return new Response(renderErrorPage(message), {
     status: 500,
     headers: { "content-type": "text/html; charset=utf-8" },
