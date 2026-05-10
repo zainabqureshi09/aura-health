@@ -7,11 +7,7 @@ import { nitro } from "nitro/vite";
 
 export default defineConfig({
   plugins: [
-    tanstackStart({
-      server: {
-        entry: "src/server.ts",
-      },
-    }),
+    tanstackStart(),
     nitro({
       preset: "vercel",
     }),

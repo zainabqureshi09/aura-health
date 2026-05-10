@@ -36,10 +36,11 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="relative min-h-screen bg-background text-foreground p-10">
-      <h1 className="text-4xl font-bold text-brand-blue">Hassan Medical Store</h1>
-      <p className="mt-4">If you can see this, the core application is working.</p>
-      {/* <Navbar />
+    <div className="relative min-h-screen bg-background text-foreground">
+      <LoadingScreen />
+      <SmoothScroll />
+      <ScrollProgress />
+      <Navbar />
       <main>
         <Hero />
         <Features />
@@ -51,7 +52,7 @@ function Index() {
         <Contact />
       </main>
       <Footer />
-      <FloatingWhatsApp /> */}
+      <FloatingWhatsApp />
     </div>
   );
 }
