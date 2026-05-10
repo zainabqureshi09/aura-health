@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ShoppingBag, Heart, Baby, Sparkles, Stethoscope, Pill } from "lucide-react";
+import { supabase } from "@/lib/supabase";
+import { toast } from "sonner";
 
 const categories = [
   { id: "all", label: "All", icon: Sparkles },
@@ -11,7 +13,7 @@ const categories = [
   { id: "equipment", label: "Equipment", icon: Stethoscope },
 ];
 
-const products = [
+const staticProducts = [
   { name: "Panadol Extra", cat: "medicine", price: "Rs. 120", tag: "Pain Relief" },
   { name: "Centrum Multivitamin", cat: "vitamin", price: "Rs. 1,850", tag: "Daily Wellness" },
   { name: "Pampers Premium", cat: "baby", price: "Rs. 2,400", tag: "Baby Care" },
@@ -24,6 +26,32 @@ const products = [
 
 export function Products() {
   const [active, setActive] = useState("all");
+  const [products, setProducts] = useState(staticProducts);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    async function fetchProducts() {
+      setLoading(true);
+      try {
+        const { data, error } = await supabase.from("products").select("*");
+        if (error) {
+          // If the table doesn't exist yet, we just stay with static data
+          if (error.code !== "PGRST116" && error.code !== "42P01") {
+            console.error("Supabase error:", error);
+          }
+        } else if (data && data.length > 0) {
+          setProducts(data);
+        }
+      } catch (err) {
+        console.error("Fetch error:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchProducts();
+  }, []);
+
   const filtered = active === "all" ? products : products.filter((p) => p.cat === active);
 
   return (
@@ -34,7 +62,7 @@ export function Products() {
             <p className="text-sm font-medium text-primary uppercase tracking-widest">
               Curated catalogue
             </p>
-            <h2 className="mt-3 text-4xl md:text-5xl font-bold">
+            <h2 className="mt-3 text-4xl md:text-5xl font-bold text-brand-blue">
               Everything for your <span className="text-gradient">wellbeing</span>.
             </h2>
           </div>
@@ -42,7 +70,7 @@ export function Products() {
             href="https://wa.me/923000000000"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass-strong text-sm hover:bg-foreground/10 transition"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl glass-strong text-sm font-bold text-brand-blue hover:bg-brand-blue/5 transition-all shadow-sm"
           >
             View full catalogue →
           </a>
