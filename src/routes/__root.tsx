@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { queryClient as fallbackQueryClient } from "../router";
 
 function NotFoundComponent() {
   return (
@@ -112,7 +113,8 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  const { queryClient } = Route.useRouteContext();
+  const context = Route.useRouteContext();
+  const queryClient = context.queryClient || fallbackQueryClient;
 
   return (
     <QueryClientProvider client={queryClient}>
