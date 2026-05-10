@@ -19,9 +19,9 @@ export function Navbar() {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 20);
-      
+
       // Simple active section tracking
-      const sections = links.map(l => l.href.substring(1));
+      const sections = links.map((l) => l.href.substring(1));
       for (const section of sections.reverse()) {
         const el = document.getElementById(section);
         if (el && el.offsetTop <= window.scrollY + 100) {
@@ -53,10 +53,10 @@ export function Navbar() {
           <a href="#" className="flex items-center gap-4 group">
             <div className="relative">
               <div className="absolute inset-0 bg-brand-green/20 blur-lg rounded-full scale-0 group-hover:scale-110 transition-transform duration-500" />
-              <img 
-                src={logo} 
-                alt="Hassan Medical Store" 
-                className="h-10 md:h-11 w-auto object-contain relative drop-shadow-md group-hover:scale-105 transition-transform duration-500" 
+              <img
+                src={logo}
+                alt="Hassan Medical Store"
+                className="h-10 md:h-11 w-auto object-contain relative drop-shadow-md group-hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="flex flex-col">
@@ -76,7 +76,9 @@ export function Navbar() {
                 key={l.href}
                 href={l.href}
                 className={`text-sm font-semibold transition-all duration-300 nav-link-hover py-1 ${
-                  active === l.href ? "text-brand-blue nav-link-active" : "text-brand-text/60 hover:text-brand-blue"
+                  active === l.href
+                    ? "text-brand-blue nav-link-active"
+                    : "text-brand-text/60 hover:text-brand-blue"
                 }`}
               >
                 {l.label}
@@ -100,7 +102,11 @@ export function Navbar() {
               className="md:hidden p-2.5 rounded-xl glass hover:bg-brand-blue/5 transition-colors"
               aria-label="Toggle Menu"
             >
-              {open ? <X className="w-6 h-6 text-brand-blue" /> : <Menu className="w-6 h-6 text-brand-blue" />}
+              {open ? (
+                <X className="w-6 h-6 text-brand-blue" />
+              ) : (
+                <Menu className="w-6 h-6 text-brand-blue" />
+              )}
             </button>
           </div>
         </div>
@@ -143,4 +149,3 @@ export function Navbar() {
     </motion.header>
   );
 }
-

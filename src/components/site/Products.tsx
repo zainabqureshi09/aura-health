@@ -59,7 +59,9 @@ export function Products() {
                   : "glass hover:bg-brand-blue/5 text-brand-blue/60 hover:text-brand-blue border border-brand-blue/5"
               }`}
             >
-              <c.icon className={`w-4 h-4 ${active === c.id ? "text-white" : "text-brand-green"}`} />
+              <c.icon
+                className={`w-4 h-4 ${active === c.id ? "text-white" : "text-brand-green"}`}
+              />
               {c.label}
             </button>
           ))}
@@ -86,10 +88,14 @@ export function Products() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-brand-blue group-hover:text-brand-green transition-colors">{p.name}</h3>
+                <h3 className="text-lg font-bold text-brand-blue group-hover:text-brand-green transition-colors">
+                  {p.name}
+                </h3>
                 <div className="mt-4 flex items-center justify-between">
                   <div className="flex flex-col">
-                    <span className="text-xs text-brand-muted font-medium uppercase tracking-wider">Price</span>
+                    <span className="text-xs text-brand-muted font-medium uppercase tracking-wider">
+                      Price
+                    </span>
                     <span className="text-xl font-bold text-brand-blue">{p.price}</span>
                   </div>
                   <a

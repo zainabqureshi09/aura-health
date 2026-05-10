@@ -32,7 +32,7 @@ export function LoadingScreen() {
                 className="h-20 w-auto object-contain relative drop-shadow-xl"
               />
             </motion.div>
-            
+
             <div className="mt-8 flex flex-col items-center">
               <span className="font-display font-bold text-2xl text-brand-blue tracking-tight">
                 Hassan <span className="text-brand-green">Medical</span>

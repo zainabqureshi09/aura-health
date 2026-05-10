@@ -30,9 +30,8 @@ export function Assistant() {
             A pharmacist <span className="text-gradient">in your pocket</span>.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-lg">
-            Describe a symptom, search for a medicine, or get dosage guidance.
-            Our AI assistant is trained on verified medical data and supervised
-            by licensed pharmacists.
+            Describe a symptom, search for a medicine, or get dosage guidance. Our AI assistant is
+            trained on verified medical data and supervised by licensed pharmacists.
           </p>
 
           <ul className="mt-6 space-y-3">
@@ -66,7 +65,9 @@ export function Assistant() {
                 <p className="text-base font-bold text-brand-blue">Hassan Medical AI</p>
                 <div className="flex items-center gap-2 mt-0.5">
                   <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
-                  <p className="text-xs font-semibold text-brand-green uppercase tracking-wider">online</p>
+                  <p className="text-xs font-semibold text-brand-green uppercase tracking-wider">
+                    online
+                  </p>
                 </div>
               </div>
             </div>

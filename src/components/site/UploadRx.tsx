@@ -33,8 +33,8 @@ export function UploadRx() {
             Snap it. <span className="text-gradient">We handle the rest</span>.
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Upload your doctor's prescription and our pharmacist will prepare
-            and dispatch your order.
+            Upload your doctor's prescription and our pharmacist will prepare and dispatch your
+            order.
           </p>
         </div>
 
@@ -84,7 +84,9 @@ export function UploadRx() {
                       <FileCheck2 className="w-7 h-7 text-brand-green" />
                     </div>
                     <div>
-                      <p className="font-bold text-brand-blue truncate max-w-[180px]">{file.name}</p>
+                      <p className="font-bold text-brand-blue truncate max-w-[180px]">
+                        {file.name}
+                      </p>
                       <p className="text-xs text-brand-muted font-bold uppercase tracking-wider mt-0.5">
                         {(file.size / 1024).toFixed(1)} KB
                       </p>

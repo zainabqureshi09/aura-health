@@ -8,8 +8,11 @@ export function Hero() {
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-brand-blue/5 rounded-full blur-[140px] animate-pulse-soft" />
-        <div className="absolute bottom-0 right-1/4 w-[800px] h-[800px] bg-brand-green/5 rounded-full blur-[140px] animate-pulse-soft" style={{ animationDelay: '2s' }} />
-        
+        <div
+          className="absolute bottom-0 right-1/4 w-[800px] h-[800px] bg-brand-green/5 rounded-full blur-[140px] animate-pulse-soft"
+          style={{ animationDelay: "2s" }}
+        />
+
         {/* Floating Particles */}
         {Array.from({ length: 20 }).map((_, i) => (
           <motion.div
@@ -55,7 +58,8 @@ export function Hero() {
           </h1>
 
           <p className="text-lg md:text-xl text-brand-muted leading-relaxed max-w-xl mb-12 mx-auto lg:mx-0">
-            Experience the gold standard of pharmacy. Premium medicines, surgical essentials, and expert consultation delivered with integrity to your doorstep.
+            Experience the gold standard of pharmacy. Premium medicines, surgical essentials, and
+            expert consultation delivered with integrity to your doorstep.
           </p>
 
           <div className="flex flex-wrap justify-center lg:justify-start gap-5">
@@ -83,17 +87,21 @@ export function Hero() {
               { icon: Truck, label: "Fast Delivery", color: "text-brand-blue" },
               { icon: Clock, label: "24/7 Service", color: "text-brand-green" },
             ].map((f, i) => (
-              <motion.div 
+              <motion.div
                 key={f.label}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 + i * 0.1 }}
                 className="flex flex-col items-center lg:items-start gap-3"
               >
-                <div className={`w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center border border-brand-blue/5 ${f.color}`}>
+                <div
+                  className={`w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center border border-brand-blue/5 ${f.color}`}
+                >
                   <f.icon className="w-6 h-6" />
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-brand-text/50 text-center lg:text-left">{f.label}</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-brand-text/50 text-center lg:text-left">
+                  {f.label}
+                </span>
               </motion.div>
             ))}
           </div>
@@ -106,8 +114,8 @@ export function Hero() {
           className="relative order-first lg:order-last"
         >
           <div className="absolute inset-0 bg-brand-green/10 blur-[120px] rounded-full animate-pulse-soft" />
-          
-          <motion.div 
+
+          <motion.div
             whileHover={{ y: -10 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative aspect-square rounded-full overflow-hidden glass p-4 shadow-elegant animate-float mx-auto max-w-[500px] lg:max-w-full"
@@ -132,7 +140,9 @@ export function Hero() {
           >
             <div className="flex flex-col">
               <span className="text-3xl font-bold text-brand-blue tracking-tighter">15k+</span>
-              <span className="text-[10px] font-bold text-brand-green uppercase tracking-[0.2em] mt-1">Happy Patients</span>
+              <span className="text-[10px] font-bold text-brand-green uppercase tracking-[0.2em] mt-1">
+                Happy Patients
+              </span>
             </div>
           </motion.div>
 
@@ -148,8 +158,12 @@ export function Hero() {
                 <Truck className="w-6 h-6 text-brand-green" />
               </div>
               <div className="flex flex-col">
-                <span className="text-sm font-bold text-brand-blue leading-none">Fastest Delivery</span>
-                <span className="text-[10px] text-brand-muted mt-2 font-bold uppercase tracking-wider">Under 45 mins</span>
+                <span className="text-sm font-bold text-brand-blue leading-none">
+                  Fastest Delivery
+                </span>
+                <span className="text-[10px] text-brand-muted mt-2 font-bold uppercase tracking-wider">
+                  Under 45 mins
+                </span>
               </div>
             </div>
           </motion.div>
@@ -158,4 +172,3 @@ export function Hero() {
     </section>
   );
 }
-

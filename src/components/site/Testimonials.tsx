@@ -2,11 +2,31 @@ import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 const items = [
-  { name: "Ayesha K.", city: "Karachi", text: "Got my mother's prescription delivered within 25 minutes. Felt premium and reliable." },
-  { name: "Bilal R.", city: "Lahore", text: "The AI assistant suggested the right vitamin combo. Honestly impressed." },
-  { name: "Sana M.", city: "Islamabad", text: "Beautiful app, genuine medicines, and the WhatsApp ordering is so easy." },
-  { name: "Hamza T.", city: "Rawalpindi", text: "Late-night emergency — they delivered within 30 minutes. Lifesaver." },
-  { name: "Maria F.", city: "Faisalabad", text: "Finally a pharmacy that feels modern. The upload feature is brilliant." },
+  {
+    name: "Ayesha K.",
+    city: "Karachi",
+    text: "Got my mother's prescription delivered within 25 minutes. Felt premium and reliable.",
+  },
+  {
+    name: "Bilal R.",
+    city: "Lahore",
+    text: "The AI assistant suggested the right vitamin combo. Honestly impressed.",
+  },
+  {
+    name: "Sana M.",
+    city: "Islamabad",
+    text: "Beautiful app, genuine medicines, and the WhatsApp ordering is so easy.",
+  },
+  {
+    name: "Hamza T.",
+    city: "Rawalpindi",
+    text: "Late-night emergency — they delivered within 30 minutes. Lifesaver.",
+  },
+  {
+    name: "Maria F.",
+    city: "Faisalabad",
+    text: "Finally a pharmacy that feels modern. The upload feature is brilliant.",
+  },
 ];
 
 export function Testimonials() {
@@ -31,20 +51,27 @@ export function Testimonials() {
           className="flex gap-5 w-max"
         >
           {loop.map((t, i) => (
-            <div key={i} className="w-[380px] glass-strong rounded-3xl p-8 shrink-0 border border-brand-blue/5 shadow-card hover:shadow-elegant transition-all duration-500">
+            <div
+              key={i}
+              className="w-[380px] glass-strong rounded-3xl p-8 shrink-0 border border-brand-blue/5 shadow-card hover:shadow-elegant transition-all duration-500"
+            >
               <div className="flex gap-1 text-brand-green">
                 {Array.from({ length: 5 }).map((_, j) => (
                   <Star key={j} className="w-4 h-4 fill-current drop-shadow-sm" />
                 ))}
               </div>
-              <p className="mt-6 text-base leading-relaxed text-brand-blue font-medium italic">"{t.text}"</p>
+              <p className="mt-6 text-base leading-relaxed text-brand-blue font-medium italic">
+                "{t.text}"
+              </p>
               <div className="mt-8 flex items-center gap-4">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-primary grid place-items-center font-bold text-white shadow-md">
                   {t.name[0]}
                 </div>
                 <div>
                   <p className="text-sm font-bold text-brand-blue">{t.name}</p>
-                  <p className="text-xs font-bold text-brand-green uppercase tracking-widest mt-0.5">{t.city}</p>
+                  <p className="text-xs font-bold text-brand-green uppercase tracking-widest mt-0.5">
+                    {t.city}
+                  </p>
                 </div>
               </div>
             </div>

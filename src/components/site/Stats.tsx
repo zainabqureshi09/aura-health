@@ -48,7 +48,9 @@ export function Stats() {
               <p className="text-4xl md:text-6xl font-bold text-gradient leading-none">
                 <Counter value={s.value} suffix={s.suffix} />
               </p>
-              <p className="mt-4 text-xs font-bold text-brand-text/50 uppercase tracking-[0.2em]">{s.label}</p>
+              <p className="mt-4 text-xs font-bold text-brand-text/50 uppercase tracking-[0.2em]">
+                {s.label}
+              </p>
             </motion.div>
           ))}
         </div>
