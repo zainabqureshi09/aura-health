@@ -36,9 +36,13 @@ export function Contact() {
 
       toast.success("Request sent successfully! We'll contact you shortly.");
       setFormData({ name: "", phone: "", address: "", message: "" });
-    } catch (error: any) {
+    } catch (error) {
       console.error("Error sending request:", error);
-      toast.error("Failed to send request. Please check your Supabase connection.");
+      const message =
+        error instanceof Error
+          ? error.message
+          : "Failed to send request. Please check your Supabase connection.";
+      toast.error(message);
     } finally {
       setLoading(false);
     }
