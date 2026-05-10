@@ -18,8 +18,9 @@ async function getServerEntry(): Promise<ServerEntry> {
   return serverEntryPromise;
 }
 
-function brandedErrorResponse(): Response {
-  return new Response(renderErrorPage(), {
+function brandedErrorResponse(error?: unknown): Response {
+  const message = error instanceof Error ? error.message : "Something went wrong on our end. You can try refreshing or head back home.";
+  return new Response(renderErrorPage(message), {
     status: 500,
     headers: { "content-type": "text/html; charset=utf-8" },
   });
@@ -62,8 +63,9 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
     return response;
   }
 
-  console.error(consumeLastCapturedError() ?? new Error(`h3 swallowed SSR error: ${body}`));
-  return brandedErrorResponse();
+  const captured = consumeLastCapturedError();
+  console.error(captured ?? new Error(`h3 swallowed SSR error: ${body}`));
+  return brandedErrorResponse(captured);
 }
 
 export default {
@@ -74,7 +76,7 @@ export default {
       return await normalizeCatastrophicSsrResponse(response);
     } catch (error) {
       console.error(error);
-      return brandedErrorResponse();
+      return brandedErrorResponse(error);
     }
   },
 };
