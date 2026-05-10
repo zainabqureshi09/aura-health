@@ -37,9 +37,9 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="relative min-h-screen bg-background text-foreground">
-      <LoadingScreen />
+      {/* <LoadingScreen />
       <SmoothScroll />
-      <ScrollProgress />
+      <ScrollProgress /> */}
       <Navbar />
       <main>
         <Hero />
