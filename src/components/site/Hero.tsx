@@ -1,6 +1,40 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Upload, ShieldCheck, Truck, Clock, Sparkles } from "lucide-react";
 import heroImg from "@/assets/hero-medical.jpg";
+import { useEffect, useState } from "react";
+
+function Particles() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
+
+  return (
+    <>
+      {Array.from({ length: 20 }).map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-1.5 h-1.5 rounded-full bg-brand-green/30"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+          }}
+          animate={{
+            y: [0, -60, 0],
+            opacity: [0.1, 0.4, 0.1],
+            scale: [1, 1.3, 1],
+          }}
+          transition={{
+            duration: 6 + Math.random() * 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: Math.random() * 5,
+          }}
+        />
+      ))}
+    </>
+  );
+}
 
 export function Hero() {
   return (
@@ -14,27 +48,7 @@ export function Hero() {
         />
 
         {/* Floating Particles */}
-        {Array.from({ length: 20 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1.5 h-1.5 rounded-full bg-brand-green/30"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -60, 0],
-              opacity: [0.1, 0.4, 0.1],
-              scale: [1, 1.3, 1],
-            }}
-            transition={{
-              duration: 6 + Math.random() * 6,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: Math.random() * 5,
-            }}
-          />
-        ))}
+        <Particles />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 mt-24 lg:mt-32 grid lg:grid-cols-2 gap-16 items-center">
