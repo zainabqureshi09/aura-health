@@ -1,12 +1,14 @@
-import { fetch } from '../dist/server/server.js';
+import server from '../dist/server/server.js';
 
-export default async function handler(request, response) {
-  const res = await fetch(request);
-  const body = await res.text();
-  
-  response.status(res.status);
-  for (const [key, value] of res.headers.entries()) {
-    response.setHeader(key, value);
+export const config = {
+  runtime: 'edge',
+};
+
+export default async function handler(request) {
+  try {
+    return await server.fetch(request);
+  } catch (error) {
+    console.error('SSR Fetch Error:', error);
+    return new Response(error.message || 'Internal Server Error', { status: 500 });
   }
-  response.send(body);
 }
