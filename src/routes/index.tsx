@@ -16,8 +16,8 @@ import { ScrollProgress } from "@/components/site/ScrollProgress";
 
 export const Route = createFileRoute("/")({
   head: () => ({
+    title: "Hassan Medical Store — Pakistan's Premium Digital Pharmacy",
     meta: [
-      { title: "Hassan Medical Store — Pakistan's Premium Digital Pharmacy" },
       {
         name: "description",
         content:

@@ -9,7 +9,6 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
-import { queryClient as fallbackQueryClient } from "../router";
 
 function NotFoundComponent() {
   return (
@@ -70,10 +69,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
+    title: "Hassan Medical Store",
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Hassan Medical Store" },
       { name: "description", content: "Pakistan's Premium Digital Pharmacy" },
       { name: "author", content: "Hassan Medical" },
       { property: "og:title", content: "Hassan Medical Store" },
@@ -111,8 +110,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  const context = Route.useRouteContext();
-  const queryClient = context.queryClient || fallbackQueryClient;
+  const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
